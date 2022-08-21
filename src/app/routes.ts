@@ -4,6 +4,8 @@ import { AngularComponent } from "./topics/angular/angular.component";
 
 export const appRoutes: Routes = [
   { path: 'app-category', component: CategoryComponent },
-  { path: 'app-angular', component: AngularComponent }
+  { path: 'app-angular', component: AngularComponent },
+  { path: '**', redirectTo: 'app-angular', pathMatch: 'full' }
+
 ];
 
