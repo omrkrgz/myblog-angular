@@ -16,10 +16,13 @@ import { FormsModule } from '@angular/forms';
 import { ArticleFilterPipe } from './pipes/article-filter.pipe';
 import { AlertifyService } from './services/alertify.service';
 import {HttpClientModule} from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 
 @NgModule({
-  declarations: [// Bir component eklemek istediğimizde buraya ekleriz. 
+  declarations: [// Bir component eklemek istediğimizde buraya ekleriz.
     AppComponent,
     NavbarComponent,
     FooterComponent,
@@ -35,12 +38,15 @@ import {HttpClientModule} from '@angular/common/http';
 
 
   ],
-  imports: [ //dışarıdan bir modül eklemek istediğimizde buraya ekleriz. 
+  imports: [ //dışarıdan bir modül eklemek istediğimizde buraya ekleriz.
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule,
+    RouterModule.forRoot(appRoutes)
+
   ],
-  providers: [// servisler burada eklenir. 
+  providers: [// servisler burada eklenir.
     AlertifyService
   ],
   bootstrap: [AppComponent] // Başlangıç modülü olarak belirlenen modül
